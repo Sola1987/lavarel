@@ -23,4 +23,10 @@ DELETE 常用于数据删除
 Route::get('/', 'StaticPagesController@home')->name('home');        // StaticPagesController 控制器的 home 的方法, name的目的是为路由指定名称
 Route::get('/help', 'StaticPagesController@help')->name('help');    // StaticPagesController 控制器的 help 的方法, name的目的是为路由指定名称
 Route::get('/about', 'StaticPagesController@about')->name('about');  // StaticPagesController 控制器的 about 的方法, name的目的是为路由指定名称
+
 Route::get('signup', 'UsersController@create')->name('signup');
+Route::resource('users', 'UsersController');
+
+Route::get('login', 'SessionsController@create')->name('login');
+Route::post('login', 'SessionsController@store')->name('login');
+Route::delete('logout', 'SessionsController@destroy')->name('logout');

@@ -8,10 +8,12 @@
     @include('layouts._header')
     <div class="container">
       <div class="col-md-offset-1 col-md-10">
+        @include('shared._messages')
         @yield('content')
         @include('layouts._footer')
       </div>
       <!-- 这行代码表示该占位区域将用于显示 content 区块的内容，而 content 区块的内容将由继承自 default 视图的子视图定义 -->
     </div>
+    <script src="/js/app.js"></script>
   </body>
 </html>
